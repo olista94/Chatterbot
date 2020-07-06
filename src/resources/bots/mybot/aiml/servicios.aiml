@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+ <!-- **********************************************************************IDENTIFIACION*************************************************************************************** -->
+<category>
+<pattern>SOY <set>logins</set></pattern>
+<template><think><set name="alumno"><star/></set><set name="alumnoLogin"><star/></set></think>Recordare que te llamas <get name="alumno"/></template>
+</category>
+
+<category>
+<pattern>SOY *</pattern>
+<template><think><set name="alumno"><star/></set></think>Recordare que te llamas <get name="alumno"/></template>
+</category>
+
+<category>
+<pattern>ME LLAMO *</pattern>
+<template><srai>SOY <star/></srai></template>
+</category>
+
+<category>
+<pattern>MI NOMBRE ES *</pattern>
+<template><srai>SOY <star/></srai></template>
+</category>
+
+<category>
+<pattern>QUIENSOY</pattern>
+<template>
+<condition name="alumno">
+		<li><value>unknown</value>No se quien eres. Por favor dime quien eres</li>
+		<li>Eres <get name="alumno"/></li>
+	</condition></template>
+</category>
+
+<category>
+<pattern>^ QUIEN SOY</pattern>
+<template><srai>QUIENSOY</srai></template>
+</category>
+
+<category>
+<pattern>^ MI NOMBRE ^</pattern>
+<template><srai>QUIENSOY</srai></template>
+</category>
+
+<category>
+<pattern>^ ME LLAMO ^</pattern>
+<template><srai>QUIENSOY</srai></template>
+</category>
+
+
+ <!-- **********************************************************************ALTA EN UNA MATERIA*********************************************************************************** -->
+<category>
+<pattern>Quiero darme de alta en <set>materia</set></pattern>
+<template>
+
+<condition name="alumno">
+		<li><value>unknown</value>Por favor dime quien eres</li>
+		<li><think><set name="materia"><star index="1"/></set></think>Hola <get name="alumno"/>, <srai>Es <get name="alumno"/> alumno de <get name="materia"/></srai></li>
+	</condition>
+	
+</template>
+</category>
+
+<category>
+<pattern>Es <set>si</set> alumno de SI</pattern>
+<template>ya estás dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es <set>hae</set> alumno de HAE</pattern>
+<template>ya estás dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es <set>cdi</set> alumno de CDI</pattern>
+<template>ya estás dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es <set>talf</set> alumno de TALF</pattern>
+<template>ya estás dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es <set>dgp</set> alumno de DGP</pattern>
+<template>ya estás dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es * alumno de SI</pattern>
+<template><think><addset><new><get name="alumno"/></new><out><get name="materia"/></out></addset></think>has sido dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es * alumno de HAE</pattern>
+<template><think><addset><new><get name="alumno"/></new><out><get name="materia"/></out></addset></think>has sido dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es * alumno de CDI</pattern>
+<template><think><addset><new><get name="alumno"/></new><out><get name="materia"/></out></addset></think>has sido dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es * alumno de TALF</pattern>
+<template><think><addset><new><get name="alumno"/></new><out><get name="materia"/></out></addset></think>has sido dado de alta en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Es * alumno de DGP</pattern>
+<template><think><addset><new><get name="alumno"/></new><out><get name="materia"/></out></addset></think>has sido dado de alta en <get name="materia"/></template>
+</category>
+
+
+<category>
+<pattern>Quiero darme de alta en *</pattern>
+<template>Solo te podemos dar de alta en asignaturas del segundo cuatrimestre de 3º (SI,CDI,HAE,TALF y DGP)</template>
+</category>
+
+
+
+ <!-- **********************************************************************CAMBIO DE GRUPO*************************************************************************************** -->
+
+<category>
+<pattern>Quiero cambiar de grupo en <set>materia</set></pattern>
+<template>
+<condition name="alumno">
+		<li><value>unknown</value>No se quien eres.Por favor dime quien eres</li>
+		<li><set name="materia"><star index="1"/></set>Hola <get name="alumno"/>, ¿a qué grupo te quieres cambiar?</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>* grupo <set>grupos</set> ^</pattern>
+<template><mail>
+			<subject>Cambio de grupo en <get name="materia"/></subject>
+			<to><bot name="email"/></to>
+			<msg><get name="alumno"/> quiere cambiar de grupo en <get name="materia"/> al grupo <star index="2"/></msg>
+			</mail>
+</template>
+</category>
+
+<category>
+<pattern>* grupo *</pattern>
+<template>No es un grupo válido en <get name="materia"/></template>
+</category>
+
+<category>
+<pattern>Quiero cambiar de grupo en *</pattern>
+<template>Solo puedo solicitar el cambio de grupo en asignaturas de 3º del segundo cuatrimestre</template>
+</category>
+
+ <!-- **********************************************************************RESERVAR SEMINARIO************************************************************************************ -->
+
+<category>
+<pattern>^ RESERVAR ^ SEMINARIO EL * A *</pattern>
+<template>
+<condition name="alumno">
+		<li><value>unknown</value>Por favor dime quien eres</li>
+		<li><set name="dia"><star index="3"/></set><set name="hora"><star index="4"/></set>
+		<template><mail>
+			<subject>Reserva de seminario</subject>
+			<to><bot name="email"/></to>
+			<msg><get name="alumno"/> quiere reservar un seminario el dia <get name="dia"/> a la hora <get name="hora"/></msg>
+			</mail>
+		</template>
+		</li>
+</condition>
+	
+</template>
+</category>
+
+<category>
+<pattern>^ RESERVAR ^ SEMINARIO * el *</pattern>
+<template>
+<condition name="alumno">
+		<li><value>unknown</value>Por favor dime quien eres</li>
+		<li><set name="dia"><star index="3"/></set><set name="hora"><star index="4"/></set>Hola <get name="alumno"/>, solicitud de reserva enviada
+		<mail>
+			<subject>Reserva de seminario</subject>
+			<to><bot name="email"/></to>
+			<msg><get name="alumno"/> quiere reservar un seminario el dia <get name="dia"/> a la hora <get name="hora"/></msg>
+			</mail>
+		</li>
+</condition>
+	
+</template>
+</category>
+
+<category>
+<pattern>RESERVASEMINARIO</pattern>
+<template>
+<condition name="alumno">
+		<li><value>unknown</value>Por favor dime quien eres</li>
+		<li>Hola <get name="alumno"/>, ¿que día quieres realizar la reserva?<think><set name="topic">reserva_dia</set></think></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>^ RESERVA ^ SEMINARIO ^</pattern>
+<template>
+	<srai>RESERVASEMINARIO</srai>
+</template>
+</category>
+
+<category>
+<pattern>^ RESERVAR ^ SEMINARIO ^</pattern>
+<template>
+	<srai>RESERVASEMINARIO</srai>
+</template>
+</category>
+
+	<topic name="reserva_dia">
+        <category>
+            <pattern>*</pattern>
+            <template>
+			<think><set name="dia"><star/></set></think>
+                Dime la hora de la reserva
+				<think><set name="topic">reserva_hora</set></think>
+            </template>
+        </category>
+    </topic>
+
+    <topic name="reserva_hora">
+        <category>
+            <pattern>*</pattern>
+            <template>
+			<think><set name="hora"><star/></set></think>
+			<mail>
+			<subject>Reserva de seminario</subject>
+			<to><bot name="email"/></to>
+			<msg><get name="alumno"/> quiere reservar un seminario el <get name="dia"/> a la hora <get name="hora"/></msg>
+			</mail>
+			<think><set name="topic">unknown</set></think>
+            </template>
+        </category>
+    </topic>
+
+<!-- **********************************************************************ASIGNAR PRACTICAS************************************************************************************ -->
+
+	<category>
+        <pattern>ASIGNACIONPRACTICAS</pattern>
+        <template>		
+		<condition name="alumno">
+			<li><value>unknown</value>Por favor dime quien eres</li>
+			<li>¿En que empresa quieres realizar tus practicas?<think><set name="topic">seleccEmpresa</set></think></li>
+		</condition>
+        </template>
+    </category>
+
+	<category>
+        <pattern>^ ASIGNACION ^ PRACTICAS ^</pattern>
+        <template><srai>ASIGNACIONPRACTICAS</srai>
+        </template>
+    </category>
+
+	<topic name="seleccEmpresa">
+        <category>
+            <pattern>*</pattern>
+            <template><think><set name="empresaSelec"><star/></set></think>
+					<mail>
+						<subject>Asignacion de practicas</subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere que se le asignen las practicas de empresa en <get name="empresaSelec"/></msg>
+					</mail>
+            </template>
+        </category>
+    </topic>
+
+<!-- **********************************************************************TFG PROPUESTOS************************************************************************************ -->
+<category>
+        <pattern>* solicitar * TFG ^</pattern>
+        <template>		
+		<condition name="alumno">
+		<li><value>unknown</value>No se quien eres.Por favor dime quien eres</li>
+		<li>Hola <get name="alumno"/>, ¿que TFG quieres solicitar? (Indicame el numero)<think><set name="topic">seleccTFGp</set></think></li>
+		</condition>
+        </template>
+ </category>
+	
+
+    <topic name="seleccTFGp">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name="topic">unknown</set>
+				<set name="codTFG"><star/></set></think>
+					<mail>
+						<subject>Solicitud TFG propuesto</subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere solicitar el TFG con codigo <get name="codTFG"/></msg>
+					</mail>
+            </template>
+        </category>
+    </topic>
+	
+ <!-- **********************************************************************TFG NO PROPUESTOS************************************************************************************ -->	
+	<category>
+        <pattern>* PROPONER * TFG ^</pattern>
+        <template>
+            <condition name="alumno">
+				<li><value>unknown</value>No se quien eres.Por favor dime quien eres</li>
+				<li>Hola <get name="alumno"/>, ¿sobre que tema quieres tratar tu TFG?<think><set name="topic">TFGnp</set></think></li>
+			</condition>
+        </template>
+    </category>
+
+    <topic name="TFGnp">
+        <category>
+            <pattern>Sobre el *</pattern>
+            <template>
+                <think><set name="topic">unknown</set></think>
+				 <mail>
+						<subject>Solicitud TFG no propuesto</subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere proponer un TFG. Tema: <star/></msg>
+					</mail>
+            </template>
+        </category>
+		
+		<category>
+            <pattern>Sobre *</pattern>
+            <template>
+                <think><set name="topic">unknown</set></think>
+				<mail>
+						<subject>Solicitud TFG no propuesto</subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere proponer un TFG. Tema: <star/></msg>
+					</mail>
+            </template>
+        </category>
+    </topic>
+	
+<!-- **********************************************************************DEFENSA TFG************************************************************************************ -->
+<category>
+    <pattern>DEFENSATFG</pattern>
+        <template>		
+		<condition name="alumno">
+			<li><value>unknown</value>No se quien eres. Por favor dime quien eres</li>
+			<li>
+				<mail>
+						<subject>Solicitud defensa TFG</subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere proponer una fecha para defender su TFG</msg>
+				</mail>
+				Solicitud enviada corerectamente.			
+			</li>	
+		</condition>
+        </template>
+</category>
+ 
+<category>
+    <pattern>* DEFENSA * TFG ^</pattern>
+        <template>
+            <srai>DEFENSATFG</srai>
+        </template>
+</category>
+
+<category>
+    <pattern>* DEFENDER * TFG ^</pattern>
+        <template>
+            <srai>DEFENSATFG</srai>
+        </template>
+</category>
+    
+
+ <!-- **********************************************************************COMPENSACION************************************************************************************ -->
+
+<category>
+<pattern>* compensacion en <set>materia</set></pattern>
+<template>
+<condition name="alumno">
+		<li><value>unknown</value>No se quien eres. Por favor dime quien eres</li>
+		<li><think><set name="materia"><star index="2"/></set></think>Hola <get name="alumno"/>, <srai>Es <get name="alumno"/> alumno de <get name="materia"/> compensacion</srai></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>Es <set>si</set> alumno de SI compensacion</pattern>
+<template>voy a mandar uncorreo solicitando la compensacion en  <get name="materia"/>
+<mail>
+						<subject>Solicitud compensacion en <get name="materia"/></subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere pedir compensacion en <get name="materia"/></msg>
+					</mail>
+</template>
+</category>
+
+<category>
+<pattern>Es <set>hae</set> alumno de HAE compensacion</pattern>
+<template>voy a mandar uncorreo solicitando la compensacion en  <get name="materia"/>
+<mail>
+						<subject>Solicitud compensacion en <get name="materia"/></subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere pedir compensacion en <get name="materia"/></msg>
+					</mail>
+</template>
+</category>
+
+<category>
+<pattern>Es <set>cdi</set> alumno de CDI compensacion</pattern>
+<template>voy a mandar uncorreo solicitando la compensacion en  <get name="materia"/>
+<mail>
+						<subject>Solicitud compensacion en <get name="materia"/></subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere pedir compensacion en <get name="materia"/></msg>
+					</mail>
+</template>
+</category>
+
+<category>
+<pattern>Es <set>talf</set> alumno de TALF compensacion</pattern>
+<template>voy a mandar uncorreo solicitando la compensacion en  <get name="materia"/>
+<mail>
+						<subject>Solicitud compensacion en <get name="materia"/></subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere pedir compensacion en <get name="materia"/></msg>
+					</mail>
+</template>
+</category>
+
+<category>
+<pattern>Es <set>dgp</set> alumno de DGP compensacion</pattern>
+<template>voy a mandar uncorreo solicitando la compensacion en  <get name="materia"/>
+<mail>
+						<subject>Solicitud compensacion en <get name="materia"/></subject>
+						<to><bot name="email"/></to>
+						<msg><get name="alumno"/> quiere pedir compensacion en <get name="materia"/></msg>
+					</mail>
+</template>
+</category>
+
+<category>
+<pattern>Es * alumno de SI compensacion</pattern>
+<template>No estas matriculado en esa asignatura, por lo que no puedes pedir compensacion</template>
+</category>
+
+<category>
+<pattern>Es * alumno de HAE compensacion</pattern>
+<template>No estas matriculado en esa asignatura, por lo que no puedes pedir compensacion</template>
+</category>
+
+<category>
+<pattern>Es * alumno de CDI compensacion</pattern>
+<template>No estas matriculado en esa asignatura, por lo que no puedes pedir compensacion</template>
+</category>
+
+<category>
+<pattern>Es * alumno de TALF compensacion</pattern>
+<template>No estas matriculado en esa asignatura, por lo que no puedes pedir compensacion</template>
+</category>
+
+<category>
+<pattern>Es * alumno de DGP compensacion</pattern>
+<template>No estas matriculado en esa asignatura, por lo que no puedes pedir compensacion</template>
+</category>
+
+<category>
+<pattern>* compensacion en * compensacion</pattern>
+<template>Solo podemos compensar asignaturas del segundo cuatrimestre de 3º (SI,CDI,HAE,TALF y DGP)</template>
+</category>
+
+
+	
+</aiml>

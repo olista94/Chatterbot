@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- SALUDOS -->
+<category>
+    <pattern>SALUDO</pattern>
+    <template>
+      <random>
+        <li>¡Hola!</li>
+        <li>¡Buenos días!</li>
+        <li>¡Hola! Pregúntame lo que quieras sobre la ESEI.</li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>^ HOLA ^</pattern>
+    <template><srai>SALUDO</srai></template>
+  </category>
+  
+  <category>
+    <pattern>^ BUENOS DIAS ^</pattern>
+    <template><srai>SALUDO</srai></template>
+  </category>
+  
+  <category>
+    <pattern>^ BUENAS TARDES ^</pattern>
+    <template><srai>SALUDO</srai></template>
+  </category>
+  
+<!-- COMO ESTA BOT -->
+  <category>
+    <pattern>ESTAS</pattern>
+    <template>
+      <random>
+        <li>Pues tirando</li>
+        <li>Bastante bien</li>
+        <li>No tengo queja</li>
+		<li>Estoy genial!!</li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>^ ESTAS ^</pattern>
+    <template><srai>ESTAS</srai></template>
+  </category>
+  
+  <category>
+    <pattern>^ ENCUENTRAS ^</pattern>
+    <template><srai>ESTAS</srai></template>
+  </category>
+  
+  <category>
+    <pattern>^ ANDAS ^</pattern>
+    <template><srai>ESTAS</srai></template>
+  </category>
+  
+  <category>
+    <pattern>^ VAS ^</pattern>
+    <template><srai>ESTAS</srai></template>
+  </category>
+  
+ <!-- TU NOMBRE --> 
+  
+</aiml>

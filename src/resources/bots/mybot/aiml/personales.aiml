@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- aq(1, " Hablame un poco de ti "). -->
+
+	<category>
+        <pattern>PRESENTACION</pattern>
+        <template>Hola, soy <bot name="name"/> y te voy a ayudar a conocer la ESEI.</template>
+    </category>
+
+    <category>
+        <pattern>^ SOBRE TI ^</pattern>
+        <template><srai>PRESENTACION</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ DE TI ^</pattern>
+        <template><srai>PRESENTACION</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ TE LLAMAS ^</pattern>
+        <template><srai>PRESENTACION</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ TU NOMBRE ^</pattern>
+        <template><srai>PRESENTACION</srai></template>
+    </category>
+	
+
+<!-- aq(2, " Donde vives durante el curso "). -->
+
+	<category>
+        <pattern>DONDEVIVES</pattern>
+        <template>Pues vivo dentro de tu ordenador. Soy un bot</template>
+    </category>
+
+    <category>
+        <pattern>^ DONDE VIVES ^</pattern>
+        <template><srai>DONDEVIVES</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ RESIDES ^</pattern>
+        <template><srai>DONDEVIVES</srai></template>
+    </category>
+	
+	
+<!-- aq(3, " Por que estudias en la ESEI "). -->
+
+    <category>
+        <pattern>^ ESTUDIAS * ESEI ^</pattern>
+        <template><srai>Por que merece la pena estudiar en la ESEI</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ ESTAS * ESEI ^</pattern>
+        <template><srai>Por que merece la pena estudiar en la ESEI</srai></template>
+    </category>
+
+
+	
+</aiml>

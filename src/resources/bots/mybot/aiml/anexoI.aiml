@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- ANEXO I -->
+		<!-- Pregunta 1 -->
+		<category>
+		<pattern>UVIGO</pattern>
+		<template>Fue fundada en 1990 y está formada por tres campus: Vigo, Pontevedra y Ourense. Tiene 68 grados y 72 masters, entre otras atividades: cursos, doctorados... Actualemnte cuenta con más de 1400 profesores y más de 20000 alumnos.</template>
+		</category>
+
+		<category>
+		<pattern>^ UNIVERSIDAD DE VIGO ^</pattern>
+		<template><srai>UVIGO</srai></template>
+		</category>
+
+		<category>
+		<pattern>^ UVIGO ^</pattern>
+		<template><srai>UVIGO</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ UNIVERSIDAD ^</pattern>
+		<template><srai>UVIGO</srai></template>
+		</category>
+
+		<!-- Pregunta 2 -->
+		<category>
+		<pattern>ESTAESEI</pattern>
+		<template>Rúa Doutor Temes Fernández, Ourense, en frente del instituto de As Lagoas</template>
+		</category>
+
+		<category>
+		<pattern>^ DONDE ^ ESEI ^</pattern>
+		<template><srai>ESTAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ DIRECCION ^ ESEI ^</pattern>
+		<template><srai>ESTAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ ZONA ^ ESEI ^</pattern>
+		<template><srai>ESTAESEI</srai></template>
+		</category>
+		
+
+		<!-- Pregunta 3 -->
+		<category>
+		<pattern>ESTUDIARESEI</pattern>
+		<template>Puedes estudiar Grado y Master en Ingenieria Informática, así como el doble grado ADE + Informática (ya eliminado)y el doctorado.</template>
+		</category>
+
+		<category>
+		<pattern>^ QUE ^ ESTUDIAR ^</pattern>
+		<template><srai>ESTUDIARESEI</srai></template>
+		</category>
+
+		<category>
+		<pattern>^ QUE ^ TITULACIONES ^</pattern>
+		<template><srai>ESTUDIARESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ QUE ^ TITULOS ^</pattern>
+		<template><srai>ESTUDIARESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ QUE ^ CARRERAS ^</pattern>
+		<template><srai>ESTUDIARESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ CUALES ^ CARRERAS ^</pattern>
+		<template><srai>ESTUDIARESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 4 -->
+		<category>
+		<pattern>PORQUEESEI</pattern>
+		<template>No es para tanto. Sobrevalorado. Hazte un ciclo</template>
+		</category>
+
+		<category>
+		<pattern># POR QUE MERECE ^ ESTUDIAR ^</pattern>
+		<template><srai>PORQUEESEI</srai></template>
+		</category>
+
+		<category>
+		<pattern>_ ATRACTIVO ^ ESTUDIAR ^</pattern>
+		<template><srai>PORQUEESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ ESTUDIAR ^</pattern>
+		<template><srai>PORQUEESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ QUERER ^ ESTUDIAR ^</pattern>
+		<template><srai>PORQUEESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ MEJOR ^ ESTUDIAR ^</pattern>
+		<template><srai>PORQUEESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 5 -->
+		<category>
+		<pattern>CAFETERIAESEI</pattern>
+		<template>Si, Camba, esta en la planta baja. Cuenta con menús también. Abre a las 8.30 y cierra a las 20.30</template>
+		</category>
+
+		<category>
+		<pattern>_ CAFETERIA ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ COMER ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ COMIDA ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ REFRESCO ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ TOMAR ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ DESAYUNAR ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ DESAYUNO ^</pattern>
+		<template><srai>CAFETERIAESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 6 -->
+		<category>
+		<pattern>DONDESECRETARIA</pattern>
+		<template>A la derecha de la conserjería, en la planta baja de la ESEI (edificio Politécnico)</template>
+		</category>
+
+		<category>
+		<pattern>^ DONDE ^ SECRETARIA ^</pattern>
+		<template><srai>DONDESECRETARIA</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ COMO ^ SECRETARIA ^</pattern>
+		<template><srai>DONDESECRETARIA</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ LOCALIZACION ^ SECRETARIA ^</pattern>
+		<template><srai>DONDESECRETARIA</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ TRAMITES ^</pattern>
+		<template><srai>DONDESECRETARIA</srai></template>
+		</category>
+
+		<!-- Pregunta 7 -->
+		<category>
+		<pattern>HORARIOSECRETARIA</pattern>
+		<template>Su horario es de 9.00 a 14.00 (lunes a viernes)</template>
+		</category>
+
+		<category>
+		<pattern>^ HORARIO ^ SECRETARIA ^</pattern>
+		<template><srai>HORARIOSECRETARIA</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ HORA * SECRETARIA ^</pattern>
+		<template><srai>HORARIOSECRETARIA</srai></template>
+		</category>
+		
+		<category>
+		<pattern>_ HORAS * secretaria ^</pattern>
+		<template><srai>HORARIOSECRETARIA</srai></template>
+		</category>
+
+		<!-- Pregunta 8 -->
+		<category>
+		<pattern>En que consiste el PAT</pattern>
+		<template>El PAT (Plan de Acción Tutorial) de la Escuela Superior de Ingeniería Informática (ESEI) es un programa de atención personalizada dirigido al alumnado de nuevo ingreso.</template>
+		</category>
+
+		<category>
+		<pattern>* PAT ^</pattern>
+		<template><srai>En que consiste el PAT</srai></template>
+		</category>
+
+		<category>
+		<pattern>* Plan ^</pattern>
+		<template><srai>En que consiste el PAT</srai></template>
+		</category>
+
+		<!-- Pregunta 9 -->
+		<category>
+		<pattern>Cual es el protocolo de acogida de alumnos con necesidades educativas especiales</pattern>
+		<template>1. Se comunicará al centro el alumno que participa en el programa PIUNE
+		2. Cada alumno participante en el PIUNE deberá indicar a cada profesor que participa en dicho programa
+		3. En caso de ser necesario establecer un progrmaa de atención personalizada, también se deberá notificar</template>
+		</category>
+
+		<category>
+		<pattern>* PIUNE ^</pattern>
+		<template><srai>Cual es el protocolo de acogida de alumnos con necesidades educativas especiales</srai></template>
+		</category>
+
+		<category>
+		<pattern>* protocolo ^</pattern>
+		<template><srai>Cual es el protocolo de acogida de alumnos con necesidades educativas especiales</srai></template>
+		</category>
+
+		<category>
+		<pattern>* necesidades ^ especiales ^</pattern>
+		<template><srai>Cual es el protocolo de acogida de alumnos con necesidades educativas especiales</srai></template>
+		</category>
+
+
+		<!-- Pregunta 10 -->
+		<category>
+		<pattern>Existe una delegacion de alumnos en la ESEI</pattern>
+		<template>Si, se llama ESEIDA. Está situada en la primera planta del edificio Politécnico</template>
+		</category>
+
+		<category>
+		<pattern>* de alumnos ^</pattern>
+		<template><srai>Existe una delegacion de alumnos en la ESEI</srai></template>
+		</category>
+
+		<category>
+		<pattern>* delegacion ^</pattern>
+		<template><srai>Existe una delegacion de alumnos en la ESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 11 -->
+		<category>
+		<pattern>Que es el suplemento europeo al titulo</pattern>
+		<template>El Suplemento Europeo al Título (SET) es el documento que acompaña al título universitario de carácter oficial y validez en todo el territorio nacional con la información unificada, personalizada para cada titulado universitario, sobre los estudios cursados, los resultados obtenidos, las capacidades profesionales adquiridas y el nivel de su titulación en el sistema nacional de educación superior.</template>
+		</category>
+
+		<category>
+		<pattern>* SET ^</pattern>
+		<template><srai>Que es el suplemento europeo al titulo</srai></template>
+		</category>
+
+		<category>
+		<pattern>* suplemento ^</pattern>
+		<template><srai>Que es el suplemento europeo al titulo</srai></template>
+		</category>
+
+		<!-- Pregunta 12 -->
+		<category>
+		<pattern>Que tipo de practicas puedo realizar como alumno de la ESEI</pattern>
+		<template>Existen dos tipos de practicas, que se pueden hacer tanto en el Grado como en el Máster de Ingeniería Informática: curriculares y extracurriculares.</template>
+		</category>
+
+		<category>
+		<pattern>* DONDE ^ practicas ^</pattern>
+		<template><srai>Que tipo de practicas puedo realizar como alumno de la ESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 13 -->
+		<category>
+		<pattern>PRACTICASESEI</pattern>
+		<template>En la página de la ESEI, sección Prácticas en empresa</template>
+		</category>
+
+		<category>
+		<pattern>^ Donde * PRACTICAS ^</pattern>
+		<template><srai>PRACTICASESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ CONSULTAR * PRACTICAS ^</pattern>
+		<template><srai>PRACTICASESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ REALIZAR * PRACTICAS ^</pattern>
+		<template><srai>PRACTICASESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 14 -->
+		<category>
+		<pattern>Con que recursos materiales y servicios cuenta la ESEI</pattern>
+		<template>Cuenta con 6 aulas, 15 laboratorios, 6 seminarios y numerosos despachos para los profesores; así como Aula Magna, sala de estudios, Administración, salón de actos y de grados...
+		En cuento a servicios, la facultad dispone de correo electronico propio (@esei.uvigo.es), infraestrucura (sotano -1) y red wireless</template>
+		</category>
+
+		<category>
+		<pattern>* recursos ^</pattern>
+		<template><srai>Con que recursos materiales y servicios cuenta la ESEI</srai></template>
+		</category>
+
+		<category>
+		<pattern>* servicios ^</pattern>
+		<template><srai>Con que recursos materiales y servicios cuenta la ESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 15 -->
+		<category>
+		<pattern>Que son los Trabajos Fin de Grado o de Master</pattern>
+		<template>Un trabajo que se realiza en el Grado (TFG) y en el Máster (TFM) para la obteción de dicho título, cuyas características variarán en función de la titulación de que se trate.</template>
+		</category>
+
+		<category>
+		<pattern>* <set>trabajos</set> ^</pattern>
+		<template><srai>Que son los Trabajos Fin de Grado o de Master</srai></template>
+		</category>
+
+		<category>
+		<pattern>* fin ^</pattern>
+		<template><srai>Que son los Trabajos Fin de Grado o de Master</srai></template>
+		</category>
+
+		<!-- Pregunta 16 -->
+		<category>
+		<pattern>BIBLIOESEI</pattern>
+		<template>Yendo a Campus Sur, Camino Seara B, 4. En epoca de examenes necesitas el NIU.</template>
+		</category>
+
+		<category>
+		<pattern>^ ACCEDER ^ BIBLIOTECA ^</pattern>
+		<template><srai>BIBLIOESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ ENTRAR ^ BIBLIOTECA ^</pattern>
+		<template><srai>BIBLIOESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ ACCEDER ^ BIBLIOTECA ^</pattern>
+		<template><srai>BIBLIOESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ ENTRO ^ BIBLIOTECA ^</pattern>
+		<template><srai>BIBLIOESEI</srai></template>
+		</category>
+
+		<!-- Pregunta 17 -->
+		<category>
+		<pattern>JUSTIFICARASISTENCIA</pattern>
+		<template>Firmas al acabar el examen y antes de la revisión, en un documento accesible en la página web, en la seccion de Formularios</template>
+		</category>
+		
+		<category>
+		<pattern>^ JUSTIFICAR ^ ASISTENCIA ^</pattern>
+		<template>Firmas al acabar el examen y antes de la revisión, en un documento accesible en la página web, en la seccion de Formularios</template>
+		</category>
+		
+		<category>
+		<pattern>^ JUSTIFICAR ASISTENCIA ^</pattern>
+		<template>Firmas al acabar el examen y antes de la revisión, en un documento accesible en la página web, en la seccion de Formularios</template>
+		</category>
+		
+		<category>
+		<pattern>* <set>diecisiete</set> ^</pattern>
+		<template><srai>JUSTIFICARASISTENCIA</srai></template>
+		</category>
+
+		<!-- Pregunta 18 -->
+		<category>
+		<pattern>ACTIVIDADESESEI</pattern>
+		<template>La ESEI ninguna. Si quieres, consultalo en la página web de la uvigo, sección de Deportes</template>
+		</category>
+
+		<category>
+		<pattern>^ ACTIVIDADES DEPORTIVAS ^</pattern>
+		<template><srai>ACTIVIDADESESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ EQUIPO DEPORTIVO ^</pattern>
+		<template><srai>ACTIVIDADESESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ DEPORTES ^</pattern>
+		<template><srai>ACTIVIDADESESEI</srai></template>
+		</category>
+		
+		<category>
+		<pattern>^ ACTIVIDADES DEPORTIVAS PROPIAS ^</pattern>
+		<template><srai>ACTIVIDADESESEI</srai></template>
+		</category>
+
+		<category>
+		<pattern>* deportivas ^</pattern>
+		<template><srai>ACTIVIDADESESEI</srai></template>
+		</category>
+<!-- FIN ANEXO I -->
+
+</aiml>

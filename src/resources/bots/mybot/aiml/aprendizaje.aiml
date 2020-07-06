@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- **********************************************************************Aprendizaje************************************************************************************ -->
+	<category>
+		<pattern>*</pattern>
+		<template>
+		Lo siento, no se qué quieres decir con: <star/>
+		¿Quieres enseñarme qué debería responder?
+		<think>
+		  <set name="pregunta"><star/></set>
+		  <set name="topic">aprender</set>
+		</think>
+		</template>
+	 </category>
+
+	<topic name="aprender">
+		<category>
+			<pattern>^ SI ^</pattern>
+			<template>
+				¿Que deberia responder a la pregunta "<get name="pregunta"/>"?
+				<condition name="alumnoLogin">
+					<li><value>unknown</value><think><set name="topic">aprendiendoNoLogin</set></think></li>
+					<li><think><set name="topic">aprendiendo</set></think></li>
+				</condition>
+			</template>
+		</category>
+
+		<category>
+			<pattern>*</pattern>
+			<template><think><set name="topic">unknown</set></think>
+				Podemos seguir hablando sobre la ESEI, si quieres.
+				<think><set name="pregunta"></set></think>
+			</template>
+		</category>
+	</topic>
+
+    <topic name="aprendiendo">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <!-- Definicion de conocimiento -->
+                <learnf>
+                    <category>
+                        <pattern>
+                            <eval><get name="pregunta"/></eval>
+                        </pattern>
+                        <template>
+                            <eval><star/></eval>
+                        </template>
+                    </category>
+                </learnf>
+				<think><set name="topic">unknown</set></think>
+                Recordaré que cuando me preguntes "<get name="pregunta"/>" tengo que contestar "<star/>"
+                <think><set name="pregunta"></set></think>
+            </template>
+        </category>
+    </topic>
+
+    <topic name="aprendiendoNoLogin">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <!-- Definicion de conocimiento -->
+                <learn>
+                    <category>
+                        <pattern>
+                            <eval><get name="pregunta"/></eval>
+                        </pattern>
+                        <template>
+                            <eval><star/></eval>
+                        </template>
+                    </category>
+                </learn>
+				<think><set name="topic">unknown</set></think>
+                Recordaré que cuando me preguntes "<get name="pregunta"/>" tengo que contestar "<star/>"
+                <think><set name="pregunta"></set></think>
+            </template>
+        </category>
+    </topic>
+	
+	</aiml>

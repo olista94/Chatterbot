@@ -1,0 +1,291 @@
+<!-- aq(4, " Que quieres hacer cuando termines tus estudios "). -->
+
+	<category>
+        <pattern>TERMINESESEI</pattern>
+        <template>Pues trabajar, que las matriculas son caras.</template>
+    </category>
+
+    <category>
+        <pattern>^ TERMINES * ESTUDIOS ^</pattern>
+        <template><srai>TERMINESESEI</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ TERMINAR * ESTUDIOS ^</pattern>
+        <template><srai>TERMINESESEI</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ ACABES * ESTUDIOS ^</pattern>
+        <template><srai>TERMINESESEI</srai></template>
+    </category>
+	
+	<category>
+        <pattern>^ ACABAR * ESTUDIOS ^</pattern>
+        <template><srai>TERMINESESEI</srai></template>
+    </category>
+	
+<!-- aq(5, " Tienes amigos en la ESEI "). -->
+
+	<category>
+        <pattern>AMIGOS</pattern>
+        <template>Tengo muchos amigos. Todos los que me preguntan algo</template>
+    </category>
+	
+	<category>
+        <pattern>^ AMIGOS ^</pattern>
+        <template><srai>AMIGOS</srai></template>
+    </category>
+
+<!-- aq(6, " Realizas alguna actividad extraescolar "). -->
+
+    <category>
+        <pattern>ACTIVIDAD</pattern>
+        <template>Actualmente la UVigo ofrece varias actividade extraescolares. Yo estoy en un equipo de baloncesto.</template>
+    </category>
+
+    <category>
+        <pattern>_ EXTRAESCOLAR ^</pattern>
+        <template><srai>ACTIVIDAD</srai></template>
+    </category>
+    <category>
+        <pattern>_ EXTRAESCOLARES ^</pattern>
+        <template><srai>ACTIVIDAD</srai></template>
+    </category>
+    
+<!-- aq(7, " Que horario de clases tienes "). -->
+
+    <category>
+        <pattern>HORARIOS</pattern>
+        <template>Tengo horarios diferentes cada dia. Para ver si coincidimo consultalos aqui: https://esei.uvigo.es/docencia/horarios/</template>
+    </category>
+
+    <category>
+        <pattern>_ HORARIO _ CLASE ^</pattern>
+        <template><srai>HORARIOS</srai></template>
+    </category>
+    <category>
+        <pattern>_ HORARIOS _ CLASE ^</pattern>
+        <template><srai>HORARIOS</srai></template>
+    </category>
+    <category>
+        <pattern>_ HORARIO _ CLASES ^</pattern>
+        <template><srai>HORARIOS</srai></template>
+    </category>
+    <category>
+        <pattern>_ HORARIOS _ CLASES ^</pattern>
+        <template><srai>HORARIOS</srai></template>
+    </category>
+	
+<!-- aq(8, " Como te llamas "). -->
+	<category>
+		<pattern>LLAMAS</pattern>
+		<template>
+			<random>
+			<li>Mi nombre es <bot name="name"/></li>
+			<li>Me llamo <bot name="name"/></li>
+			<li>Yo me llamo <bot name="name"/></li>
+		</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ LLAMAS ^</pattern>
+		<template><srai>LLAMAS</srai></template>
+	</category>
+  
+	<category>
+		<pattern>^ TU NOMBRE ^</pattern>
+		<template><srai>LLAMAS</srai></template>
+	</category>
+
+<!-- aq(9, " Tienes necesidades educativas especiales "). -->
+
+    <category>
+        <pattern>NECESIDADES</pattern>
+        <template>Yo no, pero se que la Universidad de Vigo ofrece facilidades si las tienes.</template>
+    </category>
+
+    <category>
+        <pattern>$TIENES # NECESIDADES ^ ESPECIALES #</pattern>
+        <template><srai>NECESIDADES</srai></template>
+    </category>
+    <category>
+        <pattern>$TIENES # NECESIDAD ^ ESPECIALES #</pattern>
+        <template><srai>NECESIDADES</srai></template>
+    </category>
+
+<!-- aq(10, " Perteneces a la delegacion de alumnos "). -->
+
+    <category>
+        <pattern>BOTESEIDA</pattern>
+        <template>No pertenezco, pero siempre es bueno conocer a alguien que si para que te ayude.</template>
+    </category>
+
+    <category>
+        <pattern>$PERTENECES # DELEGACION #</pattern>
+        <template><srai>BOTESEIDA</srai></template>
+    </category>
+    <category>
+        <pattern>$PERTENECES # ESEIDA #</pattern>
+        <template><srai>BOTESEIDA</srai></template>
+    </category>
+    <category>
+        <pattern>$ERES # DELEGACION #</pattern>
+        <template><srai>BOTESEIDA</srai></template>
+    </category>
+    <category>
+        <pattern>$ERES # ESEIDA #</pattern>
+        <template><srai>BOTESEIDA</srai></template>
+    </category>
+
+<!-- aq(11, " Eres un alumno Erasmus ") -->
+
+    <category>
+        <pattern>ERASMUS</pattern>
+        <template>No, pero sulo viajar mucho.</template>
+    </category>
+
+    <category>
+        <pattern>^ ERASMUS ^</pattern>
+        <template><srai>ERASMUS</srai></template>
+    </category>
+
+<!-- aq(12, " Que tipo de practicas te gustaria realizar como alumno de la ESEI "). -->
+
+    <category>
+        <pattern>PRACTICASBOT</pattern>
+        <template>Pues unas que me dejen acabar mis estudios, que es lo mas importante.</template>
+    </category>
+
+    <category>
+        <pattern>_ GUSTARIA _ TIPO _ PRACTICAS ^</pattern>
+        <template><srai>PRACTICASBOT</srai></template>
+    </category>
+    <category>
+        <pattern>_ GUSTARIA _ PRACTICAS _ TIPO ^</pattern>
+        <template><srai>PRACTICASBOT</srai></template>
+    </category>
+    <category>
+        <pattern>_ TIPO _ GUSTARIA _ PRACTICAS ^</pattern>
+        <template><srai>PRACTICASBOT</srai></template>
+    </category>
+    <category>
+        <pattern>_ TIPO _ PRACTICAS _ GUSTARIA ^</pattern>
+        <template><srai>PRACTICASBOT</srai></template>
+    </category>
+    <category>
+        <pattern>_ PRACTICAS _ TIPO _ GUSTARIA ^</pattern>
+        <template><srai>PRACTICASBOT</srai></template>
+    </category>
+    <category>
+        <pattern>_ PRACTICAS _ GUSTARIA _ TIPO ^</pattern>
+        <template><srai>PRACTICASBOT</srai></template>
+    </category>
+
+<!-- aq(13, " En que empresa te gustaria realizar las practicas "). -->
+
+    <category>
+        <pattern>_ GUSTARIA _ EMPRESA _ PRACTICAS ^</pattern>
+        <template><srai>PRACTICASBOT</srai> Tengo muy buenas referencias de Viewnext e Indra.</template>
+    </category>
+    <category>
+        <pattern>_ GUSTARIA _ PRACTICAS _ EMPRESA ^</pattern>
+        <template><srai>PRACTICASBOT</srai> Tengo muy buenas referencias de Viewnext e Indra.</template>
+    </category>
+    <category>
+        <pattern>_ EMPRESA _ GUSTARIA _ PRACTICAS ^</pattern>
+        <template><srai>PRACTICASBOT</srai> Tengo muy buenas referencias de Viewnext e Indra.</template>
+    </category>
+    <category>
+        <pattern>_ EMPRESA _ PRACTICAS _ GUSTARIA ^</pattern>
+        <template><srai>PRACTICASBOT</srai> Tengo muy buenas referencias de Viewnext e Indra.</template>
+    </category>
+    <category>
+        <pattern>_ PRACTICAS _ EMPRESA _ GUSTARIA ^</pattern>
+        <template><srai>PRACTICASBOT</srai> Tengo muy buenas referencias de Viewnext e Indra.</template>
+    </category>
+    <category>
+        <pattern>_ PRACTICAS _ GUSTARIA_ EMPRESA  ^</pattern>
+        <template><srai>PRACTICASBOT</srai> Tengo muy buenas referencias de Viewnext e Indra.</template>
+    </category>
+
+<!-- aq(14, " Te han concedido alguna beca de estudios "). -->
+
+    <category>
+        <pattern>BECAS</pattern>
+        <template>A mi no, pero es necesario que sean mas accesibles para ayudar a los alumnos con dificultades de desplazamiento, mateial, vivienda...</template>
+    </category>
+
+    <category>
+        <pattern>_ BECA ^</pattern>
+        <template><srai>BECAS</srai></template>
+    </category>
+    <category>
+        <pattern>_ BECAS ^</pattern>
+        <template><srai>BECAS</srai></template>
+    </category>
+
+<!-- aq(15, " Te gustaria obtener una retribucion por hacer tu TFG "). -->
+
+    <category>
+        <pattern>RETRIBUCIONTFG</pattern>
+        <template>Pues no me importaria en verdad. De momento lo mas importante es aprobarlo.</template>
+    </category>
+
+    <category>
+        <pattern>_ RETRIBUCION _ TFG ^</pattern>
+        <template><srai>RETRIBUCIONTFG</srai></template>
+    </category>
+    <category>
+        <pattern>_ RETRIBUCION _ TFM ^</pattern>
+        <template><srai>RETRIBUCIONTFG</srai></template>
+    </category>
+    <category>
+        <pattern>_ RETRIBUCION _ TRABAJO FIN DE ^</pattern>
+        <template><srai>RETRIBUCIONTFG</srai></template>
+    </category>
+
+<!-- aq(16, " Has ido alguna vez a la Biblioteca "). -->
+
+    <category>
+        <pattern>BIBLIOBOT</pattern>
+        <template>Me gusta ir, porque me concentro mas. Y si necesito alguna informacion, alli siempre la tienen.</template>
+    </category>
+
+    <category>
+        <pattern>^ HAS _ BIBLIOTECA ^</pattern>
+        <template><srai>BIBLIOBOT</srai></template>
+    </category>
+    <category>
+        <pattern>^ HAS _ BIBLIO ^</pattern>
+        <template><srai>BIBLIOBOT</srai></template>
+    </category>
+
+<!-- aq(17, " Quieres revisar alguna nota de la materia de Sistemas Inteligentes "). -->
+    
+    <category>
+        <pattern>REVISIONSI</pattern>
+        <template>No necesito revisar nada. Las notas estan bastante claras.</template>
+    </category>
+
+    <category>
+        <pattern>_ SISTEMAS INTELIGENTES ^</pattern>
+        <template><srai>REVISIONSI</srai></template>
+    </category>
+
+<!-- aq(18, " Que actividades ocio te gustan mas "). -->
+
+    <category>
+        <pattern>GUSTOS</pattern>
+        <template>Me encanta el deporte. Lo uso para desconectar de las clases.</template>
+    </category>
+
+    <category>
+        <pattern>^ ACTIVIDADES # OCIO ^</pattern>
+        <template><srai>GUSTOS</srai></template>
+    </category>
+    <category>
+        <pattern>^ TIEMPO LIBRE ^</pattern>
+        <template><srai>GUSTOS</srai></template>
+    </category>	
