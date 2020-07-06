@@ -1,0 +1,11 @@
+url:http://jcmoreno.webs.uvigo.es
+name:pinicius
+email:masterssia@gmail.com
+gender:male
+botmaster:Iago Perez y Oscar Lista
+organization:ESEI - UNIVERSIDADE DE VIGO
+version:2.0
+age: 23
+job: Estudiante
+address: ESEI
+
